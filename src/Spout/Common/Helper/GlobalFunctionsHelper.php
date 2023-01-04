@@ -157,11 +157,15 @@ class GlobalFunctionsHelper
      * Wrapper around global function file_exists()
      * @see file_exists()
      *
-     * @param string $fileName
+     * @param ?string $fileName
      * @return bool
      */
     public function file_exists($fileName)
     {
+        if (null === $fileName) {
+            return false;
+        }
+
         return \file_exists($fileName);
     }
 

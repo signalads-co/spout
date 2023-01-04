@@ -151,7 +151,7 @@ class ZipHelper
 
         foreach ($itemIterator as $itemInfo) {
             $itemRealPath = $this->getNormalizedRealPath($itemInfo->getPathname());
-            $itemLocalPath = \str_replace($folderRealPath, '', $itemRealPath);
+            $itemLocalPath = \str_replace((string) $folderRealPath, '', $itemRealPath);
 
             if ($itemInfo->isFile() && !$this->shouldSkipFile($zip, $itemLocalPath, $existingFileMode)) {
                 $zip->addFile($itemRealPath, $itemLocalPath);

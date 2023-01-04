@@ -30,6 +30,7 @@ class SheetIterator implements IteratorInterface
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function rewind() : void
     {
         $this->hasReadUniqueSheet = false;
@@ -41,6 +42,7 @@ class SheetIterator implements IteratorInterface
      *
      * @return bool
      */
+    #[\ReturnTypeWillChange]
     public function valid() : bool
     {
         return (!$this->hasReadUniqueSheet);
@@ -52,6 +54,7 @@ class SheetIterator implements IteratorInterface
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function next() : void
     {
         $this->hasReadUniqueSheet = true;
@@ -63,6 +66,7 @@ class SheetIterator implements IteratorInterface
      *
      * @return Sheet
      */
+    #[\ReturnTypeWillChange]
     public function current() : Sheet
     {
         return $this->sheet;
@@ -74,6 +78,7 @@ class SheetIterator implements IteratorInterface
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function key() : int
     {
         return 1;
